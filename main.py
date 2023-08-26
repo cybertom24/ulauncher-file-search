@@ -52,6 +52,11 @@ class FileSearchExtension(Extension):
         if exclude_hidden == 'no':
             cmd.append('--hidden')
 
+        excluded_dirs = self.preferences['exclude_dir'].split(';')
+        for e_dir in excluded_dirs:
+            cmd.append('-E')
+            cmd.append(e_dir)
+
         if file_type == FILE_SEARCH_FILE:
             cmd.append('-t')
             cmd.append('f')
