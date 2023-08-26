@@ -1,8 +1,8 @@
 {
   "required_api_version": "^2.0.0",
   "name": "File Search",
-  "description": "Quick Search files and directories from Ulauncher using fd",
-  "developer_name": "Bruno Paz",
+  "description": "Quick Search files and directories from Ulauncher using fd. Modified by cybertom",
+  "developer_name": "cybertom",
   "icon": "images/icon.png",
   "options": {
     "query_debounce": 0.5
