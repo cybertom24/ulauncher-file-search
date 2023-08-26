@@ -46,9 +46,11 @@ class FileSearchExtension(Extension):
 
         """ Searches for Files using fd command """
         cmd = [
-            'timeout', '5s', 'ionice', '-c', '3', bin_name, '--threads', '1',
-            '--hidden'
+            'timeout', '5s', 'ionice', '-c', '3', bin_name, '--threads', '1'
         ]
+        exclude_hidden = self.preferences['exclude_hidden']
+        if exclude_hidden == 'no':
+            cmd.append('--hidden')
 
         if file_type == FILE_SEARCH_FILE:
             cmd.append('-t')
