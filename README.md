@@ -1,6 +1,6 @@
 # ulauncher-file-search
 
-Modified by me
+Modified by me.
 Adding:
 
 - Exclude directories from search
