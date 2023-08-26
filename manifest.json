@@ -11,7 +11,7 @@
     {
       "id": "kw",
       "type": "keyword",
-      "name": "fd - File and Directory Search cacca",
+      "name": "fd - File and Directory Search",
       "default_value": "fd"
     },
     {
@@ -40,6 +40,21 @@
       "name": "Base dir",
       "description": "The base directory to start your searches. Ex: /",
       "default_value": "/"
+    },
+    {
+      "id": "exclude_dir",
+      "type": "input",
+      "name": "Exclude dir",
+      "description": "Directories to be excluded from search. Separate them by ';'",
+      "default_value": ""
+    },
+    {
+      "id": "exclude_hidden",
+      "type": "select",
+      "name": "Exclude hidden",
+      "description": "Exclude hidden files and directories from search",
+      "default_value": "yes",
+      "options": ["yes", "no"]
     }
   ]
 }
