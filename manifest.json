@@ -11,7 +11,7 @@
     {
       "id": "kw",
       "type": "keyword",
-      "name": "fd - File and Directory Search",
+      "name": "fd - File and Directory Search cacca",
       "default_value": "fd"
     },
     {

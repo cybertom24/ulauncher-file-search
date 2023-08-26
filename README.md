@@ -8,12 +8,6 @@ Adding:
 
 > Quick Search files and directories from [Ulauncher](https://ulauncher.io) using [fd](https://github.com/sharkdp/fd).
 
-[![Ulauncher Extension](https://img.shields.io/badge/Ulauncher-Extension-green.svg?style=for-the-badge)](https://ext.ulauncher.io/-/github-brpaz-ulauncher-file-search)
-[![CI Status](https://img.shields.io/github/workflow/status/brpaz/ulauncher-file-search/CI?color=orange&label=actions&logo=github&logoColor=orange&style=for-the-badge)](https://github.com/brpaz/ulauncher-file-search)
-
-[![GitHub license](https://img.shields.io/github/license/brpaz/ulauncher-file-search.svg?style=for-the-badge)](LICENSE)
-
-
 ## Demo
 
 ![demo](demo.gif)
@@ -29,7 +23,7 @@ Adding:
 Open ulauncher preferences window -> extensions -> add extension and paste the following url:
 
 ```
-https://github.com/brpaz/ulauncher-file-search
+https://github.com/cybertom24/ulauncher-file-search/
 ```
 
 ## Usage
@@ -90,7 +84,3 @@ If you like my work, feel free to "Buy me a Coffee".
 
 * [Ulauncher Extensions](https://ext.ulauncher.io/)
 * [Ulauncher 5.0 (Extension API v2.0.0) — Ulauncher 5.0.0 documentation](http://docs.ulauncher.io/en/latest/)
-
-## License
-
-MIT &copy; [Bruno Paz](http://brunopaz.net)
