@@ -54,6 +54,9 @@ class FileSearchExtension(Extension):
 
         excluded_dirs = self.preferences['exclude_dir'].split(';')
         for e_dir in excluded_dirs:
+            e_dir = '.'.join(e_dir)
+            if not e_dir.endswith('/'):
+                e_dir = e_dir.join('/')
             cmd.append('--exclude')
             cmd.append(e_dir)
 

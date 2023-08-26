@@ -45,7 +45,7 @@
       "id": "exclude_dir",
       "type": "input",
       "name": "Exclude dir",
-      "description": "Directories to be excluded from search. Separate them by ';'",
+      "description": "Directories to be excluded from search. List them removing the base dir from the path and no '/'. Separate them by ';'",
       "default_value": ""
     },
     {
