@@ -54,7 +54,7 @@ class FileSearchExtension(Extension):
 
         excluded_dirs = self.preferences['exclude_dir'].split(';')
         for e_dir in excluded_dirs:
-            cmd.append('-E')
+            cmd.append('--exclude')
             cmd.append(e_dir)
 
         if file_type == FILE_SEARCH_FILE:
