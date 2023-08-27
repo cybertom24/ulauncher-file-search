@@ -18,6 +18,7 @@ from ulauncher.api.shared.action.OpenAction import OpenAction
 from ulauncher.api.shared.action.RunScriptAction import RunScriptAction
 from ulauncher.api.shared.action.DoNothingAction import DoNothingAction
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
+from os.path import expanduser
 
 LOGGING = logging.getLogger(__name__)
 
@@ -192,7 +193,8 @@ class PreferencesUpdateEventListener(EventListener):
     def on_event(self, event, extension):
         if event.id == 'exclude_dir':
             excluded_dirs = event.new_value.split(';')
-            ignore_file = open('~/.config/fd/ignore', 'w')
+            home = expanduser('~')
+            ignore_file = open(home + '/.config/fd/ignore', 'w')
             for e_dir in excluded_dirs:
                 ignore_file.write(e_dir)
                 ignore_file.write('\n')
