@@ -34,7 +34,8 @@ class FileSearchExtension(Extension):
     def __init__(self):
         """ Initializes the extension """
         super(FileSearchExtension, self).__init__()
-        self.subscribe(KeywordQueryEvent, KeywordQueryEventListener(), PreferencesUpdateEvent)
+        self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
+        self.subscribe(PreferencesUpdateEvent, PreferencesUpdateEventListener())
 
     
 
