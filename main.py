@@ -10,7 +10,7 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gio, Gtk
 from ulauncher.api.client.Extension import Extension
 from ulauncher.api.client.EventListener import EventListener
-from ulauncher.api.shared.event import KeywordQueryEvent
+from ulauncher.api.shared.event import KeywordQueryEvent, PreferencesUpdateEvent
 from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.item.ExtensionSmallResultItem import ExtensionSmallResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
@@ -34,7 +34,9 @@ class FileSearchExtension(Extension):
     def __init__(self):
         """ Initializes the extension """
         super(FileSearchExtension, self).__init__()
-        self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
+        self.subscribe(KeywordQueryEvent, KeywordQueryEventListener(), PreferencesUpdateEvent)
+
+    
 
     def search(self, query, file_type=None):
         """ Try with the default fd or the previously successful command """
@@ -183,6 +185,17 @@ class KeywordQueryEventListener(EventListener):
 
         return RenderResultListAction(items)
 
+class PreferencesUpdateEventListener(EventListener):
+    """ Listener that handles changes in preferences """
+
+    def on_event(self, event, extension):
+        if event.id == 'exclude_dir':
+            excluded_dirs = event.new_value.split(';')
+            ignore_file = open('~/.config/fd/ignore', 'w')
+            for e_dir in excluded_dirs:
+                ignore_file.write(e_dir)
+                ignore_file.write('\n')
+            ignore_file.close()
 
 if __name__ == '__main__':
     FileSearchExtension().run()
